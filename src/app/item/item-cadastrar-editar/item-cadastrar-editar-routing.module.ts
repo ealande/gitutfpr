@@ -4,7 +4,8 @@ import { ItemCadastrarEditarComponent } from './item-cadastrar-editar.component'
 
 const routes: Routes = [
   {
-    path: "", component: ItemCadastrarEditarComponent
+    path: "item-cadastrar-editar",
+    loadChildren: () => import('./item-cadastrar-editar.module').then(m => m.ItemCadastrarEditarModule)
   }
 ];
 
