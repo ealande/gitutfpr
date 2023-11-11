@@ -1,0 +1,17 @@
+<p>Lista de Itens</p>
+
+<div class="componente-container">
+  <div *ngIf="itens$ | async as itens; else carregando">
+    <div *ngFor="let item of itens; let i = index">
+      <p>ID: {{ item.id }}</p>
+      <p>Nome: {{ item.nome }}</p>
+      <button (click)="editarItem(i, {id: item.id, nome: 'Novo Nome'})">Editar</button>
+      <button (click)="deletarItem(i)">Deletar</button>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<ng-template #carregando>
+  <p>Carregando...</p>
+</ng-template>
