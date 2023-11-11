@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ItemService } from '../item/item.service';
 import { Item } from '../model/item.model';
-import { ItemService } from '../item-service/item.service';
-import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-listar',
@@ -11,20 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./item-listar.component.scss'],
 })
 export class ItemListarComponent implements OnInit {
-  itens$: Observable<Item[]>;
-
-  mockItens: Item[] = [
-    { id: 1, nome: 'Item 1' },
-    { id: 2, nome: 'Item 2' },
-    { id: 3, nome: 'Item 3' },
-  ];
-  constructor(private itemService: ItemService, private router: Router) {
-    this.itens$ = this.itemService.itens$;
+  listaItens: Item[] = [];
+  constructor(private itemService: ItemService) {
   }
 
-  ngOnInit(): void { }
-
-  visualizarItens(): void {
-    this.router.navigate(['/itens/lista']);
+  ngOnInit(): void { 
+    this.listaItens = this.itemService.getItems();
   }
+
 }

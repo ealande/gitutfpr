@@ -11,4 +11,8 @@ export class HomeComponent {
   visualizarItens(): void {
     this.router.navigate(['/itens/lista']);
   }
+
+  navegarFormItem(): void{
+    this.router.navigate(['/item-form']);
+  }
 }

@@ -1,7 +1,7 @@
 <div>
 <h2>Dashboard</h2>
 <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly">
-  <button mat-raised-button color="primary" ng-click="">Adicionar Item</button>
+  <button mat-raised-button color="primary" (click)="navegarFormItem()">Adicionar Item</button>
   <button mat-raised-button color="accent" (click)="visualizarItens()">Visualizar Itens</button>
   <button mat-raised-button color="basic" ng-click="">Editar Item</button>
   <button mat-raised-button color="warn" ng-click="">Deletar Item</button>

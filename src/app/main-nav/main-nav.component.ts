@@ -1,8 +1,8 @@
-import { Component, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-main-nav',
@@ -12,9 +12,15 @@ import { AsyncPipe, NgIf } from '@angular/common';
 export class MainNavComponent {
   private breakpointObserver = inject(BreakpointObserver);
 
+  constructor(private router: Router){}
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
+
+    navegarItemForm(): void{
+        this.router.navigate(['/item-form']);
+    }
 }
