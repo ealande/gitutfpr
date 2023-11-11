@@ -6,6 +6,8 @@ import { Item } from '../model/item.model';
 })
 export class ItemService {
     private items: Item[] = [];
+    private item!: Item;
+    private indexItem!: number;
     private idCounter = 0;
 
     constructor(){};
@@ -21,8 +23,36 @@ export class ItemService {
         console.log(this.items);
     }
 
+    editItem(item: Item, index: number): void{
+        if(index >= 0 && index < this.items.length){
+            this.items[index] = item;
+        }
+    }
+
+    deleteItem(index: number): void{
+        if(index >= 0 && index < this.items.length){
+            this.items.splice(index, 1);
+        }
+    }
+
     getItems(): Item[] {
         return this.items;
+    }
+
+    setItem(itemEnviado: Item): void{
+        this.item = itemEnviado;
+    }
+
+    getItem(): Item{
+        return this.item;
+    }
+
+    setIndex(indexEnviado: number): void{
+        this.indexItem = indexEnviado;
+    }
+
+    getIndex(): number{
+        return this.indexItem;
     }
 }
 
