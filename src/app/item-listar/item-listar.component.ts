@@ -24,14 +24,6 @@ export class ItemListarComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  editarItem(index: number, novoItem: Item): void {
-    this.itemService.editarItem(index, novoItem);
-  }
-
-  deletarItem(index: number): void {
-    this.itemService.deletarItem(index);
-  }
-
   visualizarItens(): void {
     this.router.navigate(['/itens/lista']);
   }
