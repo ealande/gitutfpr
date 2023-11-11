@@ -12,6 +12,11 @@ import { CommonModule } from '@angular/common';
 export class ItemListarComponent implements OnInit {
   itens$: Observable<Item[]>;
 
+  mockItens: Item[] = [
+    { id: 1, nome: 'Item 1' },
+    { id: 2, nome: 'Item 2' },
+    { id: 3, nome: 'Item 3' },
+  ];
   constructor(private itemService: ItemService) {
     this.itens$ = this.itemService.itens$;
   }

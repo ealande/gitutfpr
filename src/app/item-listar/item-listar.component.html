@@ -1,12 +1,18 @@
 <p>Lista de Itens</p>
 
 <div class="componente-container">
-  <div *ngIf="itens$ | async as itens; else carregando">
-    <div *ngFor="let item of itens; let i = index">
+  <!-- Use mockItens array instead of itens$ observable -->
+  <div *ngIf="mockItens.length > 0; else carregando">
+    <div *ngFor="let item of mockItens; let i = index">
       <p>ID: {{ item.id }}</p>
       <p>Nome: {{ item.nome }}</p>
-      <button (click)="editarItem(i, {id: item.id, nome: 'Novo Nome'})">Editar</button>
-      <button (click)="deletarItem(i)">Deletar</button>
+      <button mat-icon-button (click)="editarItem(i, {id: item.id, nome: 'Novo Nome'})">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="deletarItem(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
       <hr>
     </div>
   </div>
@@ -15,3 +21,4 @@
 <ng-template #carregando>
   <p>Carregando...</p>
 </ng-template>
+
