@@ -11,11 +11,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ItemListarComponent } from './item-listar/item-listar.component';
+import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent
+    MainNavComponent,
+    ItemListarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
