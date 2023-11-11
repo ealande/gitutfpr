@@ -13,12 +13,14 @@ import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ItemListarComponent } from './item-listar/item-listar.component';
 import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
-    ItemListarComponent
+    ItemListarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

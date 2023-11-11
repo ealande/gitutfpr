@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Item } from '../model/item.model';
 import { ItemService } from '../item-service/item.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-listar',
@@ -17,7 +18,7 @@ export class ItemListarComponent implements OnInit {
     { id: 2, nome: 'Item 2' },
     { id: 3, nome: 'Item 3' },
   ];
-  constructor(private itemService: ItemService) {
+  constructor(private itemService: ItemService, private router: Router) {
     this.itens$ = this.itemService.itens$;
   }
 
@@ -29,5 +30,9 @@ export class ItemListarComponent implements OnInit {
 
   deletarItem(index: number): void {
     this.itemService.deletarItem(index);
+  }
+
+  visualizarItens(): void {
+    this.router.navigate(['/itens/lista']);
   }
 }
