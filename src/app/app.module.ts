@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { ItemFormComponent } from './item-form/item-form.component';
 import { ItemListarComponent } from './item-listar/item-listar.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
     FlexLayoutModule,
     CommonModule,
     MatInputModule,
+    MatSnackBarModule,
     MatFormFieldModule,
     FlexLayoutModule
   ],

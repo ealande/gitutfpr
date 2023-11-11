@@ -1,4 +1,4 @@
-<p>Lista de Itens</p>
+<h2 style="margin: 10px; font-weight: bold;">Lista de Itens</h2>
 
 <div class="componente-container">
   <!-- Use mockItens array instead of itens$ observable -->
@@ -6,11 +6,11 @@
     <div *ngFor="let item of listaItens; let i = index">
       <p>ID: {{ item.id }}</p>
       <p>Nome: {{ item.nome }}</p>
-      <button mat-icon-button>
+      <button (click)="navegarItem(item, i)" mat-icon-button>
         <mat-icon>edit</mat-icon>
       </button>
 
-      <button mat-icon-button>
+      <button (click)="deletarItem(i)" mat-icon-button>
         <mat-icon>delete</mat-icon>
       </button>
       <hr>
@@ -19,6 +19,6 @@
 </div>
 
 <ng-template #carregando>
-  <p>Carregando...</p>
+  <p>Sem itens na lista</p>
 </ng-template>
 
