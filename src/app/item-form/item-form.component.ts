@@ -37,10 +37,10 @@ export class ItemFormComponent implements OnInit {
         if(this.isEditing){
             let index = this.itemService.getIndex();
             this.itemService.editItem(itemAdd, index);
-            this._snackBar.open("Item editado com sucesso");
+            this._snackBar.open("Item editado com sucesso", '', {duration: 3000});
         } else {
             this.itemService.addItem(itemAdd);
-            this._snackBar.open("Item salvo com sucesso");
+            this._snackBar.open("Item salvo com sucesso", '', {duration: 3000});
         }
 
         this.nomeItem = "";
